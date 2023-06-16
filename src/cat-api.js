@@ -5,9 +5,19 @@ export function fetchBreeds(api_key, url) {
     },
   })
     .then(response => {
-      return response.json();
-    })
-    .catch(error => {
-      console.log(error);
+        return response.json();
+    });
+}
+
+
+
+export function fetchCatByBreed(urlImg, api_key, breedId) {
+   return fetch(urlImg + breedId, {
+    headers: {
+      'x-api-key': api_key,
+    },
+  })
+    .then(response => {
+      return response.json();      
     });
 }
